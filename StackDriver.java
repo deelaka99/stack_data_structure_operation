@@ -43,4 +43,13 @@ public class StackDriver{
             return false;
         }
     }
+
+    //isFull method
+    public boolean isFull(){
+        if (top==stack.length-1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
