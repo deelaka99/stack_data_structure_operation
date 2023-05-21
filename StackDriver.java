@@ -2,16 +2,44 @@ import java.util.*;
 
 public class StackDriver{
     //initializing the stack array
-    int[] stack = new int[5];
+    static int[] stack = new int[5];
     //initializing the variable top to -1
-    int top = -1;
-
+    static int top = -1;
     public static void main(String[] args){
-        //System.out.println("Hello testing");
+        int num = 1;
+        while (num != 0) {
+            Scanner ch = new Scanner(System.in);
+            System.out.println("Enter the numbers accroding to your operation:\n1 : push\n2 : pop\n3 : isFull\n4 : isEmpty\n5 : peek\n6 : display");
+            num = ch.nextInt();
+            switch (num) {
+                case 0:
+                    break;
+                case 1:
+                    push();
+                    break;
+                case 2:
+                    pop();
+                    break;
+                case 3:
+                    isFull();
+                    break;
+                case 4:
+                    isEmpty();
+                    break;
+                case 5:
+                    peek();
+                    break;
+                case 6:
+                    display();
+                    break;
+                default:
+                    System.out.println("Invalid num or characater!!!");
+            }    
+        }
     }
 
     //push method
-    public void push(){
+    public static void push(){
         int data;//declare the variable x to store inputted data
         System.out.print("Enter the num ["+(top+1)+"]");
         Scanner input = new Scanner(System.in);//creating a scanner object from importing scanner class
@@ -27,7 +55,7 @@ public class StackDriver{
     }
 
     //pop method
-    public void pop(){
+    public static void pop(){
         if (top == -1) {
             System.out.println("Stack is underflow!!!");
         } else {
@@ -36,30 +64,35 @@ public class StackDriver{
     }
 
     //isEmpty method
-    public boolean isEmpty(){
+    public static void isEmpty(){
         if (top<0) {
-            return true;
+            System.out.println("Stack is Empty!!!");
         } else {
-            return false;
+            System.out.println("Stack is not Empty!!!");
         }
     }
 
     //isFull method
-    public boolean isFull(){
+    public static void isFull(){
         if (top==stack.length-1) {
-            return true;
+            System.out.println("Stack is full!!!");
         } else {
-            return false;
+            System.out.println("Stack is not full!!!");
         }
     }
 
     //peek method
-    public void peek(){
-        System.out.println("Stack's top value is: "+stack[top]);
+    public static void peek(){
+        if (top>=0) {
+            System.out.println("Stack's top value is: "+stack[top]);
+        }
+        else{
+            System.out.println("Stack is empty");
+        }
     }
 
     //display method
-    public void display(){
+    public static void display(){
         for (int i = top; i >= 0; i--) {
             System.out.println("Stack["+i+"] = "+stack[top]);
         }
