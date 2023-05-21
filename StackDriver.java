@@ -34,4 +34,13 @@ public class StackDriver{
             top--;
         }
     }
+
+    //isEmpty method
+    public boolean isEmpty(){
+        if (top<0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
