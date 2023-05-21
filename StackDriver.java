@@ -52,4 +52,11 @@ public class StackDriver{
             return false;
         }
     }
+
+    //peek method
+    public void peek(){
+        System.out.println("Stack's top value is: "+stack[top]);
+    }
+
+    
 }
