@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class StackDriver{
     //initializing the stack array
     int[] stack = new int[5];
@@ -10,6 +12,17 @@ public class StackDriver{
 
     //push method
     public void push(){
-        
+        int data;//declare the variable x to store inputted data
+        System.out.print("Enter the num ["+(top+1)+"]");
+        Scanner input = new Scanner(System.in);//creating a scanner object from importing scanner class
+        data = input.nextInt();//getting values from user to the data variable
+
+        if (top==stack.length-1) {
+            System.out.println("Stack is over flow!!!");
+        } else {
+            top++;
+            stack[top] = data;
+        }
+
     }
 }
