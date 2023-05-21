@@ -58,5 +58,10 @@ public class StackDriver{
         System.out.println("Stack's top value is: "+stack[top]);
     }
 
-    
+    //display method
+    public void display(){
+        for (int i = top; i >= 0; i--) {
+            System.out.println("Stack["+i+"] = "+stack[top]);
+        }
+    }
 }
