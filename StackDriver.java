@@ -25,4 +25,13 @@ public class StackDriver{
         }
 
     }
+
+    //pop method
+    public void pop(){
+        if (top == -1) {
+            System.out.println("Stack is underflow!!!");
+        } else {
+            top--;
+        }
+    }
 }
